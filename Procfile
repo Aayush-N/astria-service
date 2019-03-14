@@ -1,0 +1,1 @@
+web: gunicorn graftmate_service.wsgi

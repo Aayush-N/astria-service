@@ -7,6 +7,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 from dotenv import load_dotenv
 load_dotenv()
+import django_heroku
 
 class Common(Configuration):
 
@@ -205,3 +206,6 @@ class Common(Configuration):
             'rest_framework.authentication.TokenAuthentication',
         )
     }
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
