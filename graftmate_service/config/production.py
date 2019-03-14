@@ -1,6 +1,6 @@
 import os
 from .common import Common
-
+import django_heroku
 
 class Production(Common):
     INSTALLED_APPS = Common.INSTALLED_APPS

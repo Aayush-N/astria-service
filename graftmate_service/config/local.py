@@ -1,5 +1,7 @@
 import os
 from .common import Common
+import django_heroku
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -24,3 +26,5 @@ class Local(Common):
     EMAIL_PORT = 1025
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+    # Activate Django-Heroku.
+    django_heroku.settings(locals())
