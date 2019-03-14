@@ -3,13 +3,15 @@ from os.path import join
 from distutils.util import strtobool
 import dj_database_url
 from configurations import Configuration
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 
 from dotenv import load_dotenv
 load_dotenv()
 import django_heroku
 
 class Common(Configuration):
+
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
     INSTALLED_APPS = (
         'django.contrib.admin',
@@ -212,6 +214,6 @@ class Common(Configuration):
             'rest_framework.authentication.SessionAuthentication',
             'rest_framework.authentication.TokenAuthentication',
         )
-    
+
     }
 
