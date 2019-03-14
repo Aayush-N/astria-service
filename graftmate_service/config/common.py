@@ -212,7 +212,6 @@ class Common(Configuration):
             'rest_framework.authentication.SessionAuthentication',
             'rest_framework.authentication.TokenAuthentication',
         )
+    
     }
 
-# Activate Django-Heroku.
-django_heroku.settings(locals())
