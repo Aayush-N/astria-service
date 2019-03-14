@@ -4,6 +4,8 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+
+[packages]
 pytz = "==2018.9"
 django-configurations = "==2.1"
 gunicorn = "==19.9.0"
@@ -27,9 +29,6 @@ django-storages = "==1.7.1"
 boto3 = "==1.9.93"
 Django = "==2.1.7"
 factory_boy = "==2.11.1"
-
-[packages]
-python-dotenv = "*"
 
 [requires]
 python_version = "3.6"

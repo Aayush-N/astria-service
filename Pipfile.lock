@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "3587c3c2dfea0945820f3393024d4e6d18fb9c93b2678278fb099b8dcae0725f"
+            "sha256": "22c09feaa232f29bef0f4676a70263709c48a2f33d9777ad806b15b3a19244aa"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -16,16 +16,6 @@
         ]
     },
     "default": {
-        "python-dotenv": {
-            "hashes": [
-                "sha256:a84569d0e00d178bc5b957f7ff208bf49287cbf61857c31c258c4a91f571527b",
-                "sha256:c9b1ddd3cdbe75c7d462cb84674d87130f4b948f090f02c7d7144779afb99ae0"
-            ],
-            "index": "pypi",
-            "version": "==0.10.1"
-        }
-    },
-    "develop": {
         "appnope": {
             "hashes": [
                 "sha256:5b26757dc6f79a3b7dc9fab95359328d5747fcb2409d331ea66d0272b90ab2a0",
@@ -558,5 +548,6 @@
             ],
             "version": "==0.1.7"
         }
-    }
+    },
+    "develop": {}
 }
