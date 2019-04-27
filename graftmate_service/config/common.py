@@ -7,7 +7,6 @@ from configurations import Configuration
 
 from dotenv import load_dotenv
 load_dotenv()
-import django_heroku
 
 class Common(Configuration):
 
@@ -34,6 +33,7 @@ class Common(Configuration):
 
     # https://docs.djangoproject.com/en/2.0/topics/http/middleware/
     MIDDLEWARE = (
+        'whitenoise.middleware.WhiteNoiseMiddleware',
         'django.middleware.security.SecurityMiddleware',
         'django.contrib.sessions.middleware.SessionMiddleware',
         'django.middleware.common.CommonMiddleware',
@@ -63,15 +63,15 @@ class Common(Configuration):
 
     # Postgres
     DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'graftmate_db',                      
-        'USER': 'aayush',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '5433',
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'graftmate_db',                      
+            'USER': 'aayush',
+            'PASSWORD': '',
+            'HOST': '',
+            'PORT': '5433',
+        }
     }
-}
 
     # General
     APPEND_SLASH = True
