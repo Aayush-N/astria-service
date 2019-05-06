@@ -66,10 +66,10 @@ class Common(Configuration):
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'graftmate_db',                      
-            'USER': 'aayush',
-            'PASSWORD': '',
-            'HOST': '',
-            'PORT': '5433',
+            'USER': 'admin',
+            'PASSWORD': 'Graftmate@123',
+            'HOST': '142.93.208.115',
+            'PORT': '5432',
         }
     }
 

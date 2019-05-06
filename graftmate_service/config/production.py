@@ -1,6 +1,5 @@
 import os
 from .common import Common
-import dj_database_url
 
 class Production(Common):
     INSTALLED_APPS = Common.INSTALLED_APPS
@@ -30,17 +29,3 @@ class Production(Common):
     AWS_HEADERS = {
         'Cache-Control': 'max-age=86400, s-maxage=86400, must-revalidate',
     }
-
-# Heroku stuff
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'graftmate_db',                      
-            'USER': 'aayush',
-            'PASSWORD': '',
-            'HOST': '',
-            'PORT': '5433',
-        }
-    }
-    prod_db  =  dj_database_url.config(conn_max_age=500)
-    DATABASES['default'].update(prod_db)

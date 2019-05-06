@@ -1,29 +1,21 @@
-version: '2'
-
-services:
-  postgres:
-    image: postgres:9.6
-  web:
-    restart: always
-    environment:
-      - DJANGO_SECRET_KEY=local
-    image: web
-    build: ./
-    command: >
-      bash -c "python wait_for_postgres.py &&
-               ./manage.py migrate &&
-               ./manage.py runserver 0.0.0.0:8000"
-    volumes:
-      - ./:/code
-    ports:
-      - "8000:8000"
-    depends_on:
-      - postgres
-  documentation:
-    restart: always
-    build: ./
-    command: "mkdocs serve"
-    volumes:
-      - ./:/code
-    ports:
-      - "8001:8001"
+version: '3'
+  services:
+    nginx:
+      image: nginx:latest
+      container_name: nginx1
+      ports:
+        - "80:8000"  
+      volumes:
+        - ./src:/src
+        - ./config/nginx:/etc/nginx/conf.d
+      depends_on:
+        - web
+    
+    web:
+      build: .
+      container_name: django1
+      command: bash -c "python manage.py makemigrations && python manage.py migrate && gunicorn graftmate_service.wsgi -b 0.0.0.0:8000 --workers 3"
+      volumes:
+        - ./src:/src
+      expose:
+        - "8000"
